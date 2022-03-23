@@ -6,8 +6,8 @@ tools{
 
 maven "Maven3.8.4"
 }
-stages("git"){
-stage{
+stages{
+stage("git"){
 steps{
 git branch: 'steve-branch', credentialsId: 'my-github-credentials', url: 'https://github.com/skuria1294/java_application.git'
 }
