@@ -20,6 +20,13 @@ git branch: 'steve-branch', credentialsId: 'my-github-credentials', url: 'https:
 
 }
 }
+stage("maven build"){
+steps{
+sh "mvn clean install"
+
+}
+
+}
 
 
 }
