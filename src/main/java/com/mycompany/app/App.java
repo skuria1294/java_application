@@ -7,6 +7,10 @@ public class App
 {
 
     public long add(long first, long second) {
+        int steve;
+        int dinesh;
+        String a,b;
+        int x, y, z;
         return first + second;
     }
 
