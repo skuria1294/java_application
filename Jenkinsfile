@@ -15,6 +15,18 @@ pipeline{
 			sh "mvn clean install"
 		}
 	}
+	
+	stage("Sonarqube"){
+		environment {
+			scannerHome = tool 'Sonar'
+		}
+		steps{
+			withSonareQubeEnv('SonarServer'){
+				sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=java_maven -Dsonar.sources=. -Dsonar.java.binaries=target/classes/com/mycompany/app/ "
+
+			}
+		}
+	}
     
   }
 }
